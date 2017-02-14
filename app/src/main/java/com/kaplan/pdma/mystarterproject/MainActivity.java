@@ -1,5 +1,6 @@
 package com.kaplan.pdma.mystarterproject;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -22,12 +23,25 @@ public class MainActivity extends AppCompatActivity {
          final TextView textView = (TextView) findViewById(R.id.textView);
         Button button = (Button) findViewById(R.id.button);
         ImageView imageViewMinion = (ImageView) findViewById(R.id.imageViewMinion);
+        ImageView imageViewNext = (ImageView) findViewById(R.id.imageViewNext);
+
+        imageViewNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, NextScreen.class);
+                startActivity(intent);
+            }
+        });
+
 
         imageViewMinion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(MainActivity.this, "676gg5fgfg4tg", Toast.LENGTH_SHORT).show();
                 textView.setText("bananas");
+
+                Intent intent = new Intent(MainActivity.this, ThirdScreen.class);
+                startActivity(intent);
             }
         });
 
